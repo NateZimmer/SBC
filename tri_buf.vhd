@@ -1,0 +1,16 @@
+LIBRARY IEEE; 
+USE IEEE.STD_LOGIC_1164.ALL; 
+
+ENTITY tri_buf IS
+	GENERIC( N: INTEGER := 4);
+	PORT ( 	X 	: IN STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+			E	: IN STD_LOGIC;
+			F	: OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0 )); 
+END tri_buf; 
+
+ARCHITECTURE how_to_buf OF tri_buf IS
+BEGIN
+		F <= (OTHERS => 'Z') WHEN E = '0' ELSE X; 
+END how_to_buf; 		
+	
+		
